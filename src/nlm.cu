@@ -53,7 +53,7 @@ __global__ void nlm_d(const float* src,
                     patchDistance += diff * diff;
                 }
             }
-
+            patchDistance = patchDistance / ((2 * patchRadius + 1) * (2 * patchRadius + 1));
             float weight = expf(-patchDistance / (h * h + 1e-6f));
             weightedSum += weight * src[y2 * cols + x2];
             normalization += weight;

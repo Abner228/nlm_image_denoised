@@ -51,6 +51,10 @@ int main(int argc, char** argv) {
     dst.convertTo(out, CV_8UC1);
     cv::imwrite(outputPath, out);
 
+    src.convertTo(out, CV_8UC1);
+    cv::imwrite("./orig.png", out);
+
+
     std::cout << "saved denoised image to " << outputPath << std::endl;
     return 0;
 }
